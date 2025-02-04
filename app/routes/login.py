@@ -17,6 +17,6 @@ async def login(user_creds: schemas.UserLogin, db: Session=Depends(get_db)) :
     
     access_token = oauth2.create_access_token(data={"user_id":user.id})
 
-    return {"access token" : access_token, "token type": "bearer", 'user':user}
+    return {"access token" : access_token, "token type": "bearer", 'user':user, "user_id":user.id}
 
 
